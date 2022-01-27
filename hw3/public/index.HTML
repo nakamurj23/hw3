@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+
+		<script
+			src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"/>
+		</script>
+
+		<link rel="stylesheet" href="stylesheets\Style1.css">
+		<title>Homework 1</title>
+		
+	</head>
+	<body>
+		<h1>Cheesecake Order Form</h1>
+		<img id="cheesecake" src="https://upload.wikimedia.org/wikipedia/commons/9/9c/Mondays_at_Il_Forno_-_Cheesecake_with_strawberry_sauce.jpg" 
+			width="150" 
+			height="150"/>
+		<form id="form"> <!-- order form -->
+			<table>
+				<tr>
+					<td>Quantity</td>
+					<td>Topping</td>
+				</tr>
+				<tr>
+					<td>
+						<select id="quantity">
+							<option>1</option>
+							<option>2</option>
+							<option>3</option>
+						</select>
+					</td>
+					<td id="topping">
+						<input type="radio" id="plain" name="topping" value="Plain">
+						<label for="plain">Plain</label><br>
+						<input type="radio" id="cherry" name="topping" value="Cherry">
+						<label for="cherry">Cherry</label><br>
+						<input type="radio" id="chocolate" name="topping" value="Chocolate">
+						<label for="chocolate">Chocolate</label>
+					</td>
+				</tr>
+			</table>
+			<label for="notes">Notes:</label><br>
+			<textarea id="notes" name="notes" rows="5" cols="50" placeholder="Enter any special instrucitons here."></textarea>
+			<br><br>
+			<input type="submit" value="Order">
+		</form>
+		<form id="details"> <!-- order details form -->
+			<h2>Thank you! Your order has been placed</h2>
+			<h3>Special Instructions:</h3>
+			<p id="infoNotes"></p>
+			<h3>Quantity:</h3>
+			<p id="infoQuantity"></p>
+			<h3>Topping:</h3>
+			<p id="infoTopping"></p>
+		</form>
+		
+		<script src="javascripts/script.js"></script>
+
+		<!--https://www.w3schools.com/howto/howto_css_dropdown.asp-->
+		<div class="dropdown">
+		  <h3>Orders for <button class="dropbtn" id="btn">Jan</button></h3> 
+		  <div class="dropdown-content">
+			<!-- drop down menu replaces current text with selected month using onclick event -->
+			<a onclick="getElementById('btn').innerHTML='Jan'">Jan</a>
+			<a onclick="getElementById('btn').innerHTML='Feb'">Feb</a>
+			<a onclick="getElementById('btn').innerHTML='Mar'">Mar</a>
+			<a onclick="getElementById('btn').innerHTML='Apr'">Apr</a>
+			<a onclick="getElementById('btn').innerHTML='May'">May</a>
+			<a onclick="getElementById('btn').innerHTML='Jun'">Jun</a>
+			<a onclick="getElementById('btn').innerHTML='Jul'">Jul</a>
+			<a onclick="getElementById('btn').innerHTML='Aug'">Aug</a>
+			<a onclick="getElementById('btn').innerHTML='Sep'">Sep</a>
+			<a onclick="getElementById('btn').innerHTML='Oct'">Oct</a>
+			<a onclick="getElementById('btn').innerHTML='Nov'">Nov</a>
+			<a onclick="getElementById('btn').innerHTML='Dec'">Dec</a>
+		  </div>
+		</div>
+
+		<ul>
+			<li>11 cherry</li>
+			<li>17 chocolate</li>
+			<li>31 plain</li>
+		</ul>
+		
+	</body>
+	
+</html>
