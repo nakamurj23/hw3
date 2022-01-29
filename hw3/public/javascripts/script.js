@@ -1,3 +1,4 @@
+// Jordan Nakamura
 document.getElementById("details").style.display="none";
 		eventHandler = function( event ) {
 			/* submits the order form when the user clicks the order
