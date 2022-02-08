@@ -1,10 +1,8 @@
-// Jordan Nakamura
+// @author Jordan Nakamura
 document.getElementById("details").style.display="none";
-		eventHandler = function( event ) {
-			/* submits the order form when the user clicks the order
-			button and replaces it with thank you message and order
-			details */
-			event.preventDefault(); // prevents order menu from reappearing 
+		$(document).ready(function(){
+		  $("#form").submit(function(e){
+			e.preventDefault(); // prevents order menu from reappearing 
 			// if the string "vegan" is found in the special instructions user will be alerted, if not, order details will be shown 
 			
 			var textArea = document.getElementById('notes').value;
@@ -47,8 +45,17 @@ document.getElementById("details").style.display="none";
 				var topping = document.createTextNode(temp3);
 				textTopping.appendChild(topping);
 			}
-		  }
-		
-		$(document).ready(function(){
-		  $("#form").submit( eventHandler );
+		  });
+		  $(".dropdown-ref").click(function(){
+			  let month = $(this).text();
+			  $(".dropbtn").text(month);
+			  
+			  $.post('http://localhost:3000/orders', month, function(obj) {
+					$('#ordersCherry').text(obj[0].quantity + " " + obj[0].topping);
+					$('#ordersPlain').text(obj[1].quantity + " " + obj[1].topping);
+					$('#ordersChocolate').text(obj[2].quantity + " " + obj[2].topping);
+			});
+		  });
 		});
+
+        
